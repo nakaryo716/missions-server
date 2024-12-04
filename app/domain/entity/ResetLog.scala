@@ -6,6 +6,6 @@ import java.time.Instant
 // DailiyMissionは毎日リセットされるため、正常にリセットされたか(DailiyMissionのisCompletedがfalseに設定されたか)記録する
 final case class ResetLog(
     id: Long,
-    userId: String,
+    userId: UserId,
     resetTime: Instant,
 )

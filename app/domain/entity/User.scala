@@ -7,7 +7,7 @@ import java.time.Instant
 // パスワードはハッシュ化された状態で保持される
 final case class User(
     id: Long,
-    userId: String,
+    userId: UserId,
     userName: String,
     email: String,
     passwordHash: String,
