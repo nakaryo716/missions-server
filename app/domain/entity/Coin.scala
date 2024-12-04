@@ -6,6 +6,6 @@ package domain.entity
 // userIdはUUIDを使用する
 final case class Coin(
     id: Long,
-    userId: String,
+    userId: UserId,
     totalCoins: Int,
 )

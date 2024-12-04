@@ -6,7 +6,7 @@ import java.time.Instant
 // userIdはUUIDとしてDBに保持されている
 final case class DailiyMission(
     id: Long,
-    userId: String,
+    userId: UserId,
     title: String,
     description: Option[String],
     isCompleted: Boolean,
