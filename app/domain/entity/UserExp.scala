@@ -4,6 +4,5 @@ package domain.entity
 final case class UserExp(
     id: Long,
     userId: UserId,
-    experiencePoints: Int,
-    level: Int,
+    experiencePoints: Long,
 )
