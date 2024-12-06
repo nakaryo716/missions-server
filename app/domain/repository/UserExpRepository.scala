@@ -36,7 +36,7 @@ trait UserExpRepository {
     // UserExpの経験値を増加(変更)させる
     // @param
     // - user: User
-    // - additionalPoinsts: Long
+    // - additionalPoints: Long
     //   現在の経験値に対して**追加する**経験値量(Delta)
     //
     // @return 
