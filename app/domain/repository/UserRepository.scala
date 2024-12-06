@@ -3,12 +3,13 @@ package domain.repository
 import domain.entity.User
 import scala.concurrent.Future
 import domain.entity.UserId
+import domain.entity.UserBuilder
 
 trait UserRepository {
 
     // Userデータを保存する
     // @param
-    // - user: User
+    // - user: UserBuilder
     //
     // @return 
     // - Future.successful
@@ -18,7 +19,7 @@ trait UserRepository {
     //          ユーザーId(UUID)を返す
     // - Future.failed
     //   致命的エラーのときはExceptionがthrowされる
-    def create(user: User): Future[Either[RepositoryError, UserId]]
+    def create(userBuilder: UserBuilder): Future[Either[RepositoryError, UserId]]
 
     // UserIdによってUserデータを取得する
     // @param
