@@ -1,42 +1,42 @@
 package domain.repository
 
 import scala.concurrent.Future
-import domain.entity.DailiyMission
+import domain.entity.DailyMission
 import domain.entity.UserId
-import domain.entity.DailiyMissionId
-import domain.entity.DailiyMissionBuilder
+import domain.entity.DailyMissionId
+import domain.entity.DailyMissionBuilder
 
-trait DailiyMissionRepository {
+trait DailyMissionRepository {
 
-    // DailiyMissionデータを保存する
+    // DailyMissionデータを保存する
     // @param
-    // - mission: DailiyMissionBuilder
+    // - mission: DailyMissionBuilder
     //
     // @return 
     // - Future.successful
     //   Left: RepositoryError
     //         致命的ではないエラー時に返される
-    //   Right: DailiyMissionId
+    //   Right: DailyMissionId
     //          ミッションId(Long)を返す
     // - Future.failed
     //   致命的エラーのときはExceptionがthrowされる
-    def create(mission: DailiyMissionBuilder): Future[Either[RepositoryError, DailiyMissionId]]
+    def create(mission: DailyMissionBuilder): Future[Either[RepositoryError, DailyMissionId]]
 
-    // DailiyMissionIdを使用して一つのDailiyMissionデータを取得する
+    // DailyMissionIdを使用して一つのDailyMissionデータを取得する
     // @param
-    // - missionId: DailiyMissionId
+    // - missionId: DailyMissionId
     //
     // @return 
     // - Future.successful
     //   Left: RepositoryError
     //         致命的ではないエラー時に返される
-    //   Right: DailiyMission
+    //   Right: DailyMission
     //          ミッションを返す
     // - Future.failed
     //   致命的エラーのときはExceptionがthrowされる
-    def findById(missionId: DailiyMissionId): Future[Either[RepositoryError, DailiyMission]]
+    def findById(missionId: DailyMissionId): Future[Either[RepositoryError, DailyMission]]
 
-    // ユーザーのDailiyMissionデータ**すべて**を取得する
+    // ユーザーのDailyMissionデータ**すべて**を取得する
     // @param
     // - userId: UserId
     //
@@ -44,15 +44,15 @@ trait DailiyMissionRepository {
     // - Future.successful
     //   Left: RepositoryError
     //         致命的ではないエラー時に返される
-    //   Right: Vector[DailiyMission]
+    //   Right: Vector[DailyMission]
     //          ミッションのVectorを返す
     // - Future.failed
     //   致命的エラーのときはExceptionがthrowされる
-    def findByUserId(userId: UserId): Future[Either[RepositoryError, Vector[DailiyMission]]]
+    def findByUserId(userId: UserId): Future[Either[RepositoryError, Vector[DailyMission]]]
 
-    // DailiyMissionデータを変更する
+    // DailyMissionデータを変更する
     // @param
-    // - mission: DailiyMission
+    // - mission: DailyMission
     //
     // @return 
     // - Future.successful
@@ -61,11 +61,11 @@ trait DailiyMissionRepository {
     //   Right: Unit
     // - Future.failed
     //   致命的エラーのときはExceptionがthrowされる
-    def update(missionId: DailiyMissionId, mission: DailiyMissionBuilder): Future[Either[RepositoryError, Unit]]
+    def update(missionId: DailyMissionId, mission: DailyMissionBuilder): Future[Either[RepositoryError, Unit]]
 
-    // DailiyMissionのisCompleteフィールドをfalseからtrueにセットする
+    // DailyMissionのisCompleteフィールドをfalseからtrueにセットする
     // @param
-    // - missionId: DailiyMissionId
+    // - missionId: DailyMissionId
     //
     // @return 
     // - Future.successful
@@ -74,11 +74,11 @@ trait DailiyMissionRepository {
     //   Right: Unit
     // - Future.failed
     //   致命的エラーのときはExceptionがthrowされる
-    def setCompleteTrue(missionId: DailiyMissionId): Future[Either[RepositoryError, Unit]]
+    def setCompleteTrue(missionId: DailyMissionId): Future[Either[RepositoryError, Unit]]
 
-    // 指定されたDailiyMissionデータ一つを削除する
+    // 指定されたDailyMissionデータ一つを削除する
     // @param
-    // - missionId: DailiyMissionId
+    // - missionId: DailyMissionId
     //
     // @return 
     // - Future.successful
@@ -87,9 +87,9 @@ trait DailiyMissionRepository {
     //   Right: Unit
     // - Future.failed
     //   致命的エラーのときはExceptionがthrowされる
-    def deleteById(missionId: DailiyMissionId): Future[Either[RepositoryError, Unit]]
+    def deleteById(missionId: DailyMissionId): Future[Either[RepositoryError, Unit]]
 
-    // ユーザーが持つ**すべて**のDailiyMissionデータを削除する
+    // ユーザーが持つ**すべて**のDailyMissionデータを削除する
     // @param
     // - UserId: UserId
     //
