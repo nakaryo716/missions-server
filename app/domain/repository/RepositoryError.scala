@@ -1,6 +1,8 @@
 package domain.repository
 
-sealed trait RepositoryError
+import domain.error.MyError
+
+sealed trait RepositoryError extends MyError
 
 case object RowNotFound extends RepositoryError
 case object RowAlreadyExists extends RepositoryError

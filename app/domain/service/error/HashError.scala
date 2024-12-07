@@ -1,6 +1,8 @@
 package domain.service.error
 
-sealed trait HashError {
+import domain.error.MyError
+
+sealed trait HashError extends MyError {
   val message: String
 }
 
