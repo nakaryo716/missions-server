@@ -10,6 +10,7 @@ import domain.entity.UserBuilder
 import domain.entity.UserId
 import domain.repository.RowNotFound
 import domain.error.MyError
+import domain.entity.User
 
 class UserService @Inject() (
     userRepository: UserRepository,
@@ -25,5 +26,13 @@ class UserService @Inject() (
                 userRepository.create(newUser)
             }
         }
+    }
+
+    def findUserById(id: UserId): Future[Either[MyError, User]] = {
+        userRepository.findById(id)
+    }
+
+    def isUserExist(id: UserId): Future[Either[MyError, Boolean]] = {
+        userRepository.isExist(id)
     }
 }
