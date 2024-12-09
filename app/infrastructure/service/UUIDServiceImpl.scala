@@ -5,7 +5,7 @@ import java.util.UUID
 import domain.service.UUIDService
 
 class UUIDServiceImpl extends UUIDService {
-    def generate(): String = {
-        UUID.randomUUID().toString()
-    }
+  def generate(): String = {
+    UUID.randomUUID().toString()
+  }
 }

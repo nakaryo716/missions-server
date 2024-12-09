@@ -5,7 +5,7 @@ package domain.entity
 // 基本は```userId```によって管理される
 // userIdはUUIDを使用する
 final case class Coin(
-    id: Long,
-    userId: UserId,
-    totalCoins: Int,
+  id: Long,
+  userId: UserId,
+  totalCoins: Int,
 )
