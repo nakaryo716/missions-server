@@ -1,3 +1,4 @@
+# 生成物
 logs
 target
 /.bsp
@@ -7,7 +8,12 @@ target
 /.project
 /.settings
 /RUNNING_PID
+
+# エディタのコンフィグファイル群
 .bloop
 .g8
 .metals
 .vscode
+
+# パスワードなどの重要なもの
+mysql_config.env
